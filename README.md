@@ -86,9 +86,9 @@ On our modest dataset:
 2. Light threshold sweep for Swin
 - Lower Swin’s --det_thresh a bit 
 3. Sharpen Swin’s peaks
-- Use your HA fine-tune checkpoint (you already improved Swin vs your earlier run: repeatability ↑, MRE ↓, border FPs ↓).
+- Use your HA fine-tune checkpoint
 - Add a simple subpixel quadratic peak refinement
-- 
+  
 # How to run  
 We provide a thoroughly documented Jupyter Notebook, SuperPoint_detector_CNN_Vs_Transformer.ipynb, that guides users through the installation process and demonstrates how to train the model from scratch as well as run all components of the project. This format offers a more accessible alternative to following the installation instructions directly from GitHub and enables even students without access to GPU resources to run and explore the project with ease.
 
