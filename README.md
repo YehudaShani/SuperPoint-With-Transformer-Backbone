@@ -10,10 +10,6 @@ This project adapts and extends the MagicPoint [2] and SuperPoint [1] frameworks
 ## Motivation  
 Feature detection and matching are fundamental components of numerous computer vision tasks, including simultaneous localization and mapping (SLAM), 3D reconstruction, and image registration. While SuperPoint [1] has demonstrated strong performance across a variety of conditions, we hypothesize that replacing its convolutional backbone with a Swin Transformer [7] can further improve generalization and robustness, particularly in scenarios involving substantial appearance variations or geometric distortions.  
 
-## Previous Work  
-MagicPoint [2] is a convolutional neural network (CNN)-based interest point detector trained entirely on synthetically generated data.  
-SuperPoint [1] builds upon MagicPoint through a self-supervised learning strategy, employing homography adaptation to improve detection performance on real-world imagery without requiring manual annotations.  
-
 # Design  
 ## Structure  
 **Encoder – CNN version**  
