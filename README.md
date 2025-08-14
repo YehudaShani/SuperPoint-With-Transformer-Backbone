@@ -57,35 +57,7 @@ TODO – Insert conclusion of the project
 TODO – Insert future work  
 
 # How to run  
-## Clone the repository:  
-git clone https://our-git-repo 
-
-shell
-Copy
-Edit
-
-## Training  
-python train.py config/magic_point_syn_train.yaml # For MagicPoint
-python train.py config/superpoint_train.yaml # For SuperPoint
-
-shell
-Copy
-Edit
-
-## Running Inference:  
-python inference_check.py # Change file path to correct image!
-
-bash
-Copy
-Edit
-
-## Export for Evaluation:  
-python export_detections_repeatability.py
-python export_descriptors.py
-
-markdown
-Copy
-Edit
+We provide a thoroughly documented Jupyter Notebook that guides users through the installation process and demonstrates how to train the model from scratch as well as run all components of the project. This format offers a more accessible alternative to following the installation instructions directly from GitHub and enables even students without access to GPU resources to run and explore the project with ease.
 
 # Ethical statement  
 ## Stakeholders:  
