@@ -58,7 +58,7 @@ TODO – Insert future work
 
 # How to run  
 ## Clone the repository:  
-git clone https://our-git-repo
+git clone https://our-git-repo 
 
 shell
 Copy
