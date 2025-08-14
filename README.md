@@ -118,4 +118,5 @@ There must be clear boundaries on acceptable use. As the amount of surveillance 
 
 [6] Shaofeng Zeng. SuperPoint-Pytorch (np_version branch). [GitHub Repository](https://github.com/shaofengzeng/SuperPoint-Pytorch/tree/np_version)  
 
-[7] Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., Lin, S., & Guo, B. (2021). Swin Transfo
+[7] Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., Lin, S., & Guo, B. (2021). Swin Transformer: Hierarchical Vision Transformer using Shifted Windows,”
+in ICCV, 2021.
