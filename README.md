@@ -50,25 +50,28 @@ TODO – Insert some examples of inference using both models and compare.
 Setup (same for both models): 120×160, det_thresh=0.02, nms=4, topk=50, px_thresh=3.0, valid_margin=4, seed=123.
 Dataset: EuRoC mav0/cam0
 
+Table summary
 
-Repeatability (min/sym): Swin wins
+
+
+
+Repeatability (min/sym): 
 Swin: 0.7605 / 0.6206
 CNN: 0.7121 / 0.6032
 Swin’s detections are more consistently re-found after a homography, despite fewer points overall.
 
-Geometric accuracy & borders: CNN wins
+Geometric accuracy & borders: CNN is better
 
 Mean reprojection error: CNN 0.969 px vs Swin 1.134 px
 
 Border FP rate: CNN 0.2376 vs Swin 0.2904
-CNN’s matches land a bit closer and it spawns fewer border artefacts.
 
 Counts & matches: CNN higher (partly because it finds more points)
 
 Matches M: CNN 26.44 vs Swin 21.43
 
 Detections (Nb): CNN 37.98 vs Swin 28.73
-Swin detects fewer points at your thresholds; with fewer candidates, total matches are lower even though repeatability is higher.
+Swin detects fewer points at  our thresholds; with fewer candidates, total matches are lower even though repeatability is higher.
 
 # Conclusion  
 
