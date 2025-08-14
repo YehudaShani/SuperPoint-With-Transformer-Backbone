@@ -74,6 +74,7 @@ Data preprocessing includes:
 - Percentage of matches leading to a correct homography within a pixel threshold.
 # Results
 ##  Inference on a few Examples
+<video src="tracks_first200_once.mp4" controls width="600"></video>
 TODO - Insert some examples of inference using both of the models, compare
 ## Metrics Comparison
 TODO - Insert tables comparing results of both techniques
