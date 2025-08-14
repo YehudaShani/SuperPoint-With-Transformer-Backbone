@@ -47,16 +47,38 @@ The experimental pipeline utilizes the following datasets:
 TODO – Insert some examples of inference using both models and compare.  
 
 ## Metrics Comparison  
-<video controls autoplay muted loop playsinline width="640">
-  <source src="https://mandelyoni.github.io/SuperPoint-With-Transformer-Backbone/tracks_first200_once.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>  
+Setup (same for both models): 120×160, det_thresh=0.02, nms=4, topk=50, px_thresh=3.0, valid_margin=4, seed=123.
+Dataset: EuRoC mav0/cam0
+
+
+Repeatability (min/sym): Swin wins
+Swin: 0.7605 / 0.6206
+CNN: 0.7121 / 0.6032
+Swin’s detections are more consistently re-found after a homography, despite fewer points overall.
+
+Geometric accuracy & borders: CNN wins
+
+Mean reprojection error: CNN 0.969 px vs Swin 1.134 px
+
+Border FP rate: CNN 0.2376 vs Swin 0.2904
+CNN’s matches land a bit closer and it spawns fewer border artefacts.
+
+Counts & matches: CNN higher (partly because it finds more points)
+
+Matches M: CNN 26.44 vs Swin 21.43
+
+Detections (Nb): CNN 37.98 vs Swin 28.73
+Swin detects fewer points at your thresholds; with fewer candidates, total matches are lower even though repeatability is higher.
 
 # Conclusion  
-TODO – Insert conclusion of the project  
+
+
+Summary
+
+
 
 # Future work  
-TODO – Insert future work  
+
 
 # How to run  
 We provide a thoroughly documented Jupyter Notebook, SuperPoint_detector_CNN_Vs_Transformer.ipynb, that guides users through the installation process and demonstrates how to train the model from scratch as well as run all components of the project. This format offers a more accessible alternative to following the installation instructions directly from GitHub and enables even students without access to GPU resources to run and explore the project with ease.
