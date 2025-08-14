@@ -38,7 +38,9 @@ The experimental pipeline utilizes the following datasets:
 ## Metrics for Evaluation  
 1. **Repeatability** – Measures how consistently the same keypoints are detected in different views of the same scene.  
 2. **Localization Error** – Average pixel distance between the projected ground-truth keypoint position and the detected keypoint position.  
-3. **Homography Estimation Accuracy / Correctness** – Measures how accurately the detected keypoints can be used to estimate the geometric transformation between image pairs.  
+3. **Homography Estimation Accuracy / Correctness** – Measures how accurately the detected keypoints can be used to estimate the geometric transformation between image pairs.
+
+
 
 # Results  
 ## Inference on a few Examples  
@@ -57,7 +59,7 @@ TODO – Insert conclusion of the project
 TODO – Insert future work  
 
 # How to run  
-We provide a thoroughly documented Jupyter Notebook that guides users through the installation process and demonstrates how to train the model from scratch as well as run all components of the project. This format offers a more accessible alternative to following the installation instructions directly from GitHub and enables even students without access to GPU resources to run and explore the project with ease.
+We provide a thoroughly documented Jupyter Notebook, SuperPoint_detector_CNN_Vs_Transformer.ipynb, that guides users through the installation process and demonstrates how to train the model from scratch as well as run all components of the project. This format offers a more accessible alternative to following the installation instructions directly from GitHub and enables even students without access to GPU resources to run and explore the project with ease.
 
 # Ethical statement  
 ## Stakeholders:  
