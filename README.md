@@ -74,15 +74,21 @@ Detections (Nb): CNN 37.98 vs Swin 28.73
 Swin detects fewer points at  our thresholds; with fewer candidates, total matches are lower even though repeatability is higher.
 
 # Conclusion  
-
-
-Summary
-
-
+On our modest dataset:
+- Swin (Transformer) is more repeatable under homography: it re-detects the same points more often after warping.
+- CNN is sharper and cleaner: lower geometric error and fewer border artifacts, and it produces more matches at our current settings (partly because it detects more points).
+- Swin finds fewer points but keeps them more consistent across homographies → better repeatability
+- CNN localizes a bit more precisely (lower MRE) and behaves better near borders (lower border FP rate).
 
 # Future work  
-
-
+1. Match detection density
+- Compare at the same number of points
+2. Light threshold sweep for Swin
+- Lower Swin’s --det_thresh a bit 
+3. Sharpen Swin’s peaks
+- Use your HA fine-tune checkpoint (you already improved Swin vs your earlier run: repeatability ↑, MRE ↓, border FPs ↓).
+- Add a simple subpixel quadratic peak refinement
+- 
 # How to run  
 We provide a thoroughly documented Jupyter Notebook, SuperPoint_detector_CNN_Vs_Transformer.ipynb, that guides users through the installation process and demonstrates how to train the model from scratch as well as run all components of the project. This format offers a more accessible alternative to following the installation instructions directly from GitHub and enables even students without access to GPU resources to run and explore the project with ease.
 
