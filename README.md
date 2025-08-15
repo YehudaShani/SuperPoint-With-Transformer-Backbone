@@ -22,7 +22,7 @@ In our new design, the CNN is replaced with a Swin Transformer [7] encoder. The 
 The detector head takes the feature map from the encoder and predicts where keypoints are likely to be in the image. It uses a few small convolution layers to produce a heatmap. The original design is kept, where each cell of the heatmap has 65 values — one for each of the 8×8 positions inside the cell, plus one “no keypoint” option. A softmax is applied so the values become probabilities, then the map is reshaped and upsampled back to the original image size. The points with the highest probabilities are selected as the final keypoints.  
 
 ### CNN vs Swin Transformer Encoder
-![detector_head](images/detector_head.png)
+![detector_head](Images/detector_head.png)
 
 ## Data  
 The experimental pipeline utilizes the following datasets:  
