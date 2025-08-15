@@ -44,7 +44,7 @@ The experimental pipeline utilizes the following datasets:
 
 # Results  
 ## Inference on a few Examples
-![Test ge 1](homo_one_id_A.jpg) ![Test ge 2](homo_one_id_B.jpg) ![Test ge 3](homo_one_id_matches.jpg)
+![Test ge 1](Images/homo_one_id_A.jpg) ![Test ge 2](Images/homo_one_id_B.jpg) ![Test ge 3](Images/homo_one_id_matches.jpg)
 
 ## Metrics Comparison  
 Setup (same for both models): 120×160, det_thresh=0.02, nms=4, topk=50, px_thresh=3.0, valid_margin=4, seed=123.
