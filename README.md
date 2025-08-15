@@ -80,7 +80,7 @@ Detections (Nb): CNN 37.98 vs Swin 28.73
 Swin detects fewer points at  our thresholds; with fewer candidates, total matches are lower even though repeatability is higher.
 
 
-To demonstrate our objectives—better feature-point detection and improved optical-flow tracking across frames—we include an example produced using the Swin Transformer–based detector together with Lucas–Kanade optical flow for frame-to-frame tracking
+To demonstrate our objectives—better feature-point detection and improved optical-flow tracking across frames—we include an example produced using the Swin Transformer–based detector together with Lucas–Kanade optical flow for frame-to-frame tracking. This example can also be reproduced using our Jupyter Notebook.
 
 ![Optical flow demo](Images/demo.gif)
 # Conclusion  
