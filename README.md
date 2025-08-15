@@ -93,15 +93,8 @@ On our modest dataset:
 - Swin finds fewer points but keeps them more consistent across homographies → better repeatability
 - CNN localizes a bit more precisely (lower MRE) and behaves better near borders (lower border FP rate).
 
-# Future work  
-1. Match detection density
-- Compare at the same number of points
-2. Light threshold sweep for Swin
-- Lower Swin’s --det_thresh a bit 
-3. Sharpen Swin’s peaks
-- Use your HA fine-tune checkpoint
-- Add a simple subpixel quadratic peak refinement
-  
+You can also refer to our project book included in this repository.
+
 # How to run  
 We provide a thoroughly documented Jupyter Notebook, SuperPoint_detector_CNN_Vs_Transformer.ipynb, that guides users through the installation process and demonstrates how to train the model from scratch as well as run all components of the project. This format offers a more accessible alternative to following the installation instructions directly from GitHub and enables even students without access to GPU resources to run and explore the project with ease. Download this repo to your computer and upload it to your Drive.
 
