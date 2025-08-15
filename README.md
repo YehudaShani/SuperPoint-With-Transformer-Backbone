@@ -133,5 +133,7 @@ Matching with Transformers,” in CVPR, 2021.
 [9] A. Dosovitskiy et al., “An Image is Worth 16x16 Words: Transformers for Image Recognition
 at Scale,” 2020 (ViT).
 
-## Parameters for metric evaluation 
+
+## Appendix
+**Parameters for metric evaluation**
 ![Test ge 5](Images/metrics.png)
