@@ -42,18 +42,22 @@ The experimental pipeline utilizes the following datasets:
 
 
 
-# Results  
+# Experiments and Results  
 ## Inference on a few Examples
 ![Test ge 1](Images/homo_one_id_A.jpg) ![Test ge 2](Images/homo_one_id_B.jpg) ![Test ge 3](Images/homo_one_id_matches.jpg)
 
 ## Metrics Comparison  
-Setup (same for both models): 120×160, det_thresh=0.02, nms=4, topk=50, px_thresh=3.0, valid_margin=4, seed=123.
-Dataset: EuRoC mav0/cam0
+Both the CNN and Transformer-based SuperPoint models are first trained on the Synthetic Shapes dataset, and the resulting weights are saved.
+Subsequently, homography_consistency_dir.py is used to perform homographic augmentation on a subset of the EuRoC dataset, and the outputs of this process are employed for fine-tuning both neural networks, through Homographic Augmentation.
+Setup (same for both models): 120×160, det_thresh=0.02, nms=4, topk=50, px_thresh=3.0,
+valid_margin=4, seed=123. Dataset: EuRoC mav0/cam0.
 
-Table summary
+The results are shown in the table below
+
 
 ![Test ge 4](Images/swin_vs_cnn.png)
 
+**Table summary**
 
 Repeatability (min/sym): 
 Swin: 0.7605 / 0.6206
