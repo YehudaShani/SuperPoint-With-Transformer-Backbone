@@ -79,6 +79,8 @@ Matches M: CNN 26.44 vs Swin 21.43
 Detections (Nb): CNN 37.98 vs Swin 28.73
 Swin detects fewer points at  our thresholds; with fewer candidates, total matches are lower even though repeatability is higher.
 
+
+
 ![Optical flow demo](Images/demo.gif)
 # Conclusion  
 On our modest dataset:
