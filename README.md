@@ -5,7 +5,7 @@ Yoni Mandel and Yehuda Shani
 
 # Introduction  
 ## Project Objective  
-This project adapts and extends the MagicPoint [2] and SuperPoint [1] frameworks for keypoint detection. To enhance feature representation and improve robustness under challenging imaging conditions, we integrate a Transformer-based feature extraction backbone, specifically a Swin Transformer [7], into the detection pipeline. As inter-frame point correspondence will be established through optical flow tracking, and due to limited GPU compute resources, the descriptor computation is omitted. The proposed system is evaluated on the EuRoC dataset [4], a widely used benchmark for Visual Inertial Odometry, using established performance metrics, including repeatability and homography estimation accuracy.  
+This project adapts and extends the MagicPoint [2] and SuperPoint [1] frameworks for keypoint detection. To enhance feature representation and improve robustness under challenging imaging conditions, we integrate a Transformer-based feature extraction backbone, specifically a Swin Transformer [7], into the detection pipeline. As point correspondences between frames will be established through optical flow tracking, and due to limited GPU compute resources, descriptor computation is omitted. The proposed system is evaluated on the EuRoC dataset [4], a widely used benchmark for Visual Inertial Odometry, using established performance metrics, including repeatability and homography estimation accuracy.  
 
 ## Motivation  
 Feature detection and matching are fundamental components of numerous computer vision tasks, including simultaneous localization and mapping (SLAM), 3D reconstruction, and image registration. While SuperPoint [1] has demonstrated strong performance across a variety of conditions, we hypothesize that replacing its convolutional backbone with a Swin Transformer [7] can further improve generalization and robustness, particularly in scenarios involving substantial appearance variations or geometric distortions.  
@@ -80,6 +80,7 @@ Detections (Nb): CNN 37.98 vs Swin 28.73
 Swin detects fewer points at  our thresholds; with fewer candidates, total matches are lower even though repeatability is higher.
 
 
+To demonstrate our objectives—better feature-point detection and improved optical-flow tracking across frames—we include an example produced using the Swin Transformer–based detector together with Lucas–Kanade optical flow for frame-to-frame tracking
 
 ![Optical flow demo](Images/demo.gif)
 # Conclusion  
