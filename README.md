@@ -47,9 +47,12 @@ The experimental pipeline utilizes the following datasets:
 ![Test ge 1](Images/homo_one_id_A.jpg) ![Test ge 2](Images/homo_one_id_B.jpg) ![Test ge 3](Images/homo_one_id_matches.jpg)
 
 ## Metrics Comparison  
-Both the CNN and Transformer-based SuperPoint models are first trained on the Synthetic Shapes dataset, and the resulting weights are saved.
+Both the CNN and Transformer-based SuperPoint models are first trained on the Synthetic Shapes dataset, and the resulting weights are saved (a).
 
-Subsequently, homography_consistency_dir.py is used to perform homographic augmentation on a subset of the EuRoC dataset, and the outputs of this process are employed for fine-tuning both neural networks, through Homographic Augmentation.
+Subsequently, homography_consistency_dir.py is used to perform homographic augmentation on a subset of the EuRoC dataset, and the outputs of this process are employed for fine-tuning both neural networks, through Homographic Adaptation (b).
+
+![Test ge 7](Images/self_supervised_training.png)
+
 
 Setup (same for both models): 120×160, det_thresh=0.02, nms=4, topk=50, px_thresh=3.0,
 valid_margin=4, seed=123. Dataset: EuRoC mav0/cam0.
