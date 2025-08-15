@@ -52,7 +52,7 @@ Dataset: EuRoC mav0/cam0
 
 Table summary
 
-
+![Test ge 4](Images/swin_vs_cnn.png)
 
 
 Repeatability (min/sym): 
@@ -120,3 +120,9 @@ There must be clear boundaries on acceptable use. As the amount of surveillance 
 
 [7] Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., Lin, S., & Guo, B. (2021). Swin Transformer: Hierarchical Vision Transformer using Shifted Windows,”
 in ICCV, 2021.
+
+[8] J. Sun, Z. Shen, Y. Wang, H. Bao, and X. Zhou, “LoFTR: Detector-Free Local Feature
+Matching with Transformers,” in CVPR, 2021.
+
+[9] A. Dosovitskiy et al., “An Image is Worth 16x16 Words: Transformers for Image Recognition
+at Scale,” 2020 (ViT).
