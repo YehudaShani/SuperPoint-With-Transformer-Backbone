@@ -79,6 +79,7 @@ Matches M: CNN 26.44 vs Swin 21.43
 Detections (Nb): CNN 37.98 vs Swin 28.73
 Swin detects fewer points at  our thresholds; with fewer candidates, total matches are lower even though repeatability is higher.
 
+![Optical flow demo](images/demo.gif)
 # Conclusion  
 On our modest dataset:
 - Swin (Transformer) is more repeatable under homography: it re-detects the same points more often after warping.
