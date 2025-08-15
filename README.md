@@ -43,7 +43,7 @@ The experimental pipeline utilizes the following datasets:
 
 
 # Experiments and Results  
-## Inference on a few Examples
+## Homographic Augmentation example
 ![Test ge 1](Images/homo_one_id_A.jpg) ![Test ge 2](Images/homo_one_id_B.jpg) ![Test ge 3](Images/homo_one_id_matches.jpg)
 
 ## Metrics Comparison  
