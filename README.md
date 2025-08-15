@@ -60,7 +60,7 @@ Swin: 0.7605 / 0.6206
 CNN: 0.7121 / 0.6032
 Swin’s detections are more consistently re-found after a homography, despite fewer points overall.
 
-Geometric accuracy & borders: CNN is better
+Geometric accuracy & borders: CNN is better 
 
 Mean reprojection error: CNN 0.969 px vs Swin 1.134 px
 
