@@ -48,11 +48,13 @@ The experimental pipeline utilizes the following datasets:
 
 ## Metrics Comparison  
 Both the CNN and Transformer-based SuperPoint models are first trained on the Synthetic Shapes dataset, and the resulting weights are saved.
+
 Subsequently, homography_consistency_dir.py is used to perform homographic augmentation on a subset of the EuRoC dataset, and the outputs of this process are employed for fine-tuning both neural networks, through Homographic Augmentation.
+
 Setup (same for both models): 120×160, det_thresh=0.02, nms=4, topk=50, px_thresh=3.0,
 valid_margin=4, seed=123. Dataset: EuRoC mav0/cam0.
 
-The results are shown in the table below
+The results are shown in the table below (additional information on the parameters in the table are given in the Appendix below)
 
 
 ![Test ge 4](Images/swin_vs_cnn.png)
@@ -130,3 +132,6 @@ Matching with Transformers,” in CVPR, 2021.
 
 [9] A. Dosovitskiy et al., “An Image is Worth 16x16 Words: Transformers for Image Recognition
 at Scale,” 2020 (ViT).
+
+## Parameters for metric evaluation 
+![Test ge 5](Images/metrics.png)
