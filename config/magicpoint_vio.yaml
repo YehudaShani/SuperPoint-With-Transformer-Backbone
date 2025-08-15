@@ -1,0 +1,38 @@
+# ------------------------------------------------------------
+# CONFIG FOR MAGICPOINT FINE‑TUNE ON REAL VIO SEQUENCES
+# ------------------------------------------------------------
+
+data:
+  name: vio_real
+  seq_roots:      [/datasets/euroc/MH_01_easy,
+                   /datasets/tum_vi/room1_512_16]
+  seq_roots_test: [/datasets/euroc/MH_03_medium]      # held‑out seq
+  img_size:       [480, 640]                          # camera resolution
+  # NOTE: everything under "primitives", "augmentation", etc.
+  #       belonged to the synthetic generator and is now gone.
+
+model:
+  name: magicpoint
+  using_bn: true
+  pretrained_model: 'config/mg_syn_bce_1_0.115.pth'   # <- your synth ckpt
+  grid_size: 8
+  backbone:
+    backbone_type: VGG
+    vgg:
+      channels: [64,64,64,64,128,128,128,128]
+  det_head:
+    feat_in_dim: 128
+  det_thresh: 0.1
+  nms: 4
+  topk: -1
+
+solver:
+  epoch: 5
+  base_lr: 0.001
+  train_batch_size: 64
+  test_batch_size: 64
+  save_dir: './export'
+  model_name: 'mg_vio_focal'
+  loss_type: focal
+  gamma: 2.0
+  alpha: 0.25

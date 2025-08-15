@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+"""
+patch_compat.py · one‑off fixer for SuperPoint‑Pytorch (np_version)
+compatible with Python 3.10+ and NumPy 1.24+/2.0.
+
+✦  Rewrites deprecated NumPy scalar aliases (np.int, np.float, np.bool → int/float/bool).
+✦  Prefixes bare dtype literals (int32, float32, …) with np. when used as dtypes.
+✦  Replaces collections.Mapping / MutableMapping / Sequence → collections.abc.*.
+✦  Adds `import numpy as np` at the top of files that reference np.* but forgot the import.
+✦  Saves a *.orig backup beside every modified *.py file.
+
+Run once from the repo root:   python patch_compat.py
+"""
+
+from __future__ import annotations
+from pathlib import Path
+import re, shutil
+
+# ---------- config -----------------------------------------------------------------
+dtype_tokens = (
+    'int8','int16','int32','int64',
+    'uint8','uint16','uint32','uint64',
+    'float16','float32','float64',
+    'bool'
+)
+
+scalar_aliases = {          # regex‑pattern → replacement
+    r'\bnp\.int\b'  : 'int',
+    r'\bnp\.float\b': 'float',
+    r'\bnp\.bool\b' : 'bool'
+}
+
+collections_map = {
+    'collections.Mapping'        : 'collections.abc.Mapping',
+    'collections.MutableMapping' : 'collections.abc.MutableMapping',
+    'collections.Sequence'       : 'collections.abc.Sequence',
+}
+
+# ---------- helpers -----------------------------------------------------------------
+def needs_numpy_import(text: str) -> bool:
+    """True if file uses 'np.' in first 200 lines but lacks 'import numpy as np'."""
+    return 'np.' in text and 'import numpy as np' not in text.splitlines()[:200]
+
+def patch_file(path: Path) -> bool:
+    """Return True if file was modified."""
+    original = text = path.read_text()
+
+    # 0) add numpy import early if missing
+    if needs_numpy_import(text):
+        text = 'import numpy as np\n' + text
+
+    # 1) replace scalar aliases
+    for pat, repl in scalar_aliases.items():
+        text = re.sub(pat, repl, text)
+
+    # 2) prefix bare dtype tokens with np.
+    for tok in dtype_tokens:
+        text = re.sub(fr'(?<![\w.]){tok}(?![\w.])', f'np.{tok}', text)
+
+    # 3) collections.abc replacements
+    for old, new in collections_map.items():
+        text = text.replace(old, new)
+
+    if text != original:
+        shutil.copy(path, path.with_suffix(path.suffix + '.orig'))
+        path.write_text(text)
+        return True
+    return False
+
+# ---------- run over the repo --------------------------------------------------------
+root = Path('.').resolve()
+patched = 0
+for py in root.rglob('*.py'):
+    if '.git' in py.parts:
+        continue
+    if patch_file(py):
+        patched += 1
+        print(f'patched  {py.relative_to(root)}')
+
+print(f'✅ repo‑wide compat patch complete – {patched} files modified')
