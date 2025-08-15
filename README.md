@@ -44,7 +44,7 @@ The experimental pipeline utilizes the following datasets:
 
 # Results  
 ## Inference on a few Examples
-![Test Image 1](cat.1.jpg)
+![Test ge 1](cat.1.jpg)
 TODO – Insert some examples of inference using both models and compare.  
 
 ## Metrics Comparison  
